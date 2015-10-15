@@ -2172,7 +2172,7 @@ article:last-child {
   top: 0;
   width: 100%;
   height: 100%;
-  background: asset_url("overlay.png");
+  background: url("overlay.png");
 }
 
 .image img {
@@ -2409,7 +2409,7 @@ button.down {
   height: 5em;
   line-height: 4.5em;
   padding: 0;
-  background-image: asset_url("dark-arrow.svg");
+  background-image: url("dark-arrow.svg");
   background-position: center center;
   background-repeat: no-repeat;
   text-indent: -10em;
@@ -2476,7 +2476,7 @@ input[type="submit"].style2.down,
 input[type="reset"].style2.down,
 .button.style2.down,
 button.style2.down {
-  background-image: asset_url("arrow.svg");
+  background-image: url("arrow.svg");
 }
 
 /* Box */
@@ -2626,7 +2626,7 @@ button.style2.down {
 }
 
 .dark .button.style2.down {
-  background-image: asset_url("dark-arrow.svg");
+  background-image: url("dark-arrow.svg");
 }
 
 /* Spinner */
@@ -3104,7 +3104,7 @@ body {
 /* Intro */
 
 #intro {
-  background: asset_url("overlay.png"), asset_url("intro.jpg");
+  background: url("overlay.png"), url("intro.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
@@ -3114,7 +3114,7 @@ body {
 /* One */
 
 #one {
-  background: asset_url("overlay.png"), asset_url("one.jpg");
+  background: url("overlay.png"), url("one.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center;
@@ -3123,7 +3123,7 @@ body {
 /* Two */
 
 #two {
-  background: asset_url("overlay.png"), asset_url("two.jpg");
+  background: url("overlay.png"), url("two.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center;
@@ -3327,7 +3327,7 @@ body {
   position: absolute;
   width: 96px;
   height: 64px;
-  background: asset_url("poptrox-nav.svg");
+  background: url("poptrox-nav.svg");
   top: calc(50% - 1.5em);
   margin: -32px 0 0 0;
 }
@@ -3393,7 +3393,7 @@ body {
   height: 40px;
   border-radius: 100%;
   box-shadow: inset 0 0 0 2px #fff;
-  background: asset_url("poptrox-closer.svg") center center;
+  background: url("poptrox-closer.svg") center center;
   color: #fff !important;
 }
 
