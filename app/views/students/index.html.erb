@@ -1,0 +1,162 @@
+<% if @student.errors.size>0 then%>
+    <script>
+        window.location = window.location.href + "#contact";
+    </script>
+<% end %>
+<% if notice %>
+    <script>
+        window.alert("fail");
+    </script>
+<%end%>
+<!-- Header -->
+<header id="header">
+
+  <!-- Logo -->
+  <h1 id="logo">Student Coders Den</h1>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul>
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#one">What is this</a></li>
+      <li><a href="#two">How this works</a></li>
+      <li><a href="#work">What we expect</a></li>
+      <li><a href="#contact">Signup Now</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- Intro -->
+<section id="intro" class="main style1 dark fullscreen">
+  <div class="content container 75%">
+    <header>
+      <h2>Hey, Student Coder!</h2>
+    </header>
+    <p>Welcome to <strong>The Den</strong> for all <u>student coders!</u> <br />First for most , you have our utmost respect.<br />
+      We were like you, we were student coders.
+      <footer>
+        <a href="#one" class="button style2 down">More</a>
+      </footer>
+  </div>
+</section>
+
+<!-- One -->
+<section id="one" class="main style2 right dark fullscreen">
+  <div class="content box style2">
+    <header>
+      <h2>What is this ?</h2>
+    </header>
+    <p>We are here to provide student coders <strong>tasks</strong>. As a student coder, you will be invovling in exciting products,
+      which might not be availabel in the market yet, or will be used by millions of users. We are here to make your student
+      life more fulfilling. What is more, <u>YES!, you will get paid</u> by the task provider. Say Bye to the boring
+      Part-time Job and meagre pay!</p>
+  </div>
+  <a href="#two" class="button style2 down anchored">Next</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="main style2 left dark fullscreen">
+  <div class="content box style2">
+    <header>
+      <h2>How this works</h2>
+    </header>
+    <p>After we receive your application, <u>we will introduce you to task providers.</u> You will be paid by task provider directly,
+      after you have finished assigned task. That's it! just like how freelance works. Except we believe that some students
+      can do much better jobs than professionals.</p>
+  </div>
+  <a href="#work" class="button style2 down anchored">Next</a>
+</section>
+
+<!-- Work -->
+<section id="work" class="main style3 primary">
+  <div class="content container">
+    <header>
+      <h2>What we expect</h2>
+      <p><strong>CREDIBILITY :</strong> Simple, you have to deliver what you accept, and on time.</p>
+      <p><strong>QUALITY :</strong> Deliver a task that you feel proud of.</p>
+      <p><strong>SKILL :</strong> Last but not least, you need to be equipped with technical skills.</p>
+    </header>
+
+    <!-- Lightbox Gallery  -->
+    <div class="container 75% gallery">
+      <div class="row 0% images">
+        <div class="6u 12u(mobile)"><span class="image fit from-left"><%= image_tag("thumbs/01.jpg") %></span></div>
+        <div class="6u 12u(mobile)"><span class="image fit from-right"><%= image_tag("thumbs/02.jpg") %></span></div>
+      </div>
+      <div class="row 0% images">
+        <div class="6u 12u(mobile)"><span class="image fit from-left"><%= image_tag("thumbs/03.jpg") %></span></div>
+        <div class="6u 12u(mobile)"><span class="image fit from-right"><%= image_tag("thumbs/04.jpg") %></span></div>
+      </div>
+      <div class="row 0% images">
+        <div class="6u 12u(mobile)"><span class="image fit from-left"><%= image_tag("thumbs/05.jpg") %></span></div>
+        <div class="6u 12u(mobile)"><span class="image fit from-right"><%= image_tag("thumbs/06.jpg") %></span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="main style3 secondary">
+  <div class="content container">
+    <header>
+      <h2>Sign up Now!</h2>
+      <p>Sign up with us to have a entirely different student life!</p>
+    </header>
+    <div class="box container 75%">
+      <!-- Contact Form -->
+      <%= form_for(@student) do |f| %>
+          <div class="row">
+            <ul>
+              <% @student.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <div class="row 50%">
+          <div class="6u 12u(mobile)"><%= f.text_field :first_name, placeholder: 'First Name' %></div>
+          <div class="6u 12u(mobile)"><%= f.text_field :last_name, placeholder: 'Last Name' %></div>
+          <div class="6u 12u(mobile)"><%= f.select :gender, Student::GENDER,
+                                                   prompt: 'Select a gender' %></div>
+          <div class="6u 12u(mobile)"><%= f.text_field :study_year, placeholder: 'Study Year: eg, 2' %></div>
+          <div class="6u 12u(mobile)"><%= f.text_field :gpa, placeholder: 'GPA' %></div>
+          <div class="6u 12u(mobile)"><%= f.text_field :school, placeholder: 'School: eg, EEE' %></div>
+        </div>
+        <div class="row">
+          <div class="12u"><%= f.text_field :email, placeholder: 'School Email' %></div>
+        </div>
+        <div class="row">
+          <div class="12u"><%= f.text_field :mobile, placeholder: 'Mobile' %></div>
+        </div>
+        <div class="row">
+          <div class="12u"><%= f.text_field :hours, placeholder: 'How many hours you can contribute to the task per week' %></div>
+        </div>
+        <div class="row">
+          <div class="12u"><%= f.text_field :programming, placeholder: 'Top 3 programming skills' %></div>
+        </div>
+        <div class="row 50%">
+          <div class="12u"><%= f.text_area :message, rows:'6', placeholder: 'Tell us about your past projects if there were any. Provide us links of the website,name of the app in AppStore or PlayStore, github link for us to look at your source code, and so on..' %></div>
+        </div>
+        <div class="row">
+          <div class="12u">
+            <ul class="actions">
+              <%= f.submit 'Submit Application' %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+
+  <!-- Menu -->
+  <ul class="menu">
+    <li>&copy; COPYRIGHT 2015 by BITSTREK</li>
+  </ul>
+
+</footer>
